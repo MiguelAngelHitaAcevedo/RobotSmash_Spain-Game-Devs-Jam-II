@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b11a98350d36a444abcd1d1d42def763, type: 3}
+  m_Name: Default
+  m_EditorClassIdentifier: 
+  defaultSpeed: 10
+  dynamicSpeed: {fileID: 11400000, guid: 80b1cb60b233c5c4f95030fab122a92f, type: 2}
+  horizontalMove: {fileID: 11400000, guid: d1ac46af0b6220c41a892ae698b9e06a, type: 2}
+  verticalMove: {fileID: 11400000, guid: 707bcf677d1944640a1f127af3d8a6fb, type: 2}

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using RobotSmash.Variables;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,15 +17,24 @@ namespace RobotSmash
 
             #region MonoBehaviour
             // Start is called before the first frame update
-            void Start()
+            private void Awake()
             {
-
+                //Devuelve los valores al default
+                playerProfile.ResetStats();
             }
 
             // Update is called once per frame
             void Update()
             {
+                //Actualiza los float de los ejes
+                playerProfile.HorizontalMove = Input.GetAxisRaw("Horizontal");
+                playerProfile.VerticalMove = Input.GetAxisRaw("Vertical");
+            }
 
+            private void FixedUpdate()
+            {
+                //Llamada al movimiento
+                playerProfile.Movement(rb);
             }
             #endregion
 
