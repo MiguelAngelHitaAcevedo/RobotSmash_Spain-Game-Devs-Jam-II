@@ -1,5 +1,4 @@
-﻿using RobotSmash.RuntimeSet;
-using RobotSmash.Variables;
+﻿using RobotSmash.Variables;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,11 +13,6 @@ namespace RobotSmash
             [SerializeField] private Rigidbody rb = default;
             //Aquí se almacena la lógica del jugador
             [SerializeField] private PlayerProfile playerProfile = default;
-            //Camara del player
-            [SerializeField] private Camera playerCamera = default;
-            //Referencia global
-            [SerializeField] private RuntimeSetGameObject playerRuntime = default;
-
             #endregion
 
             #region MonoBehaviour
@@ -29,33 +23,23 @@ namespace RobotSmash
                 playerProfile.ResetStats();
             }
 
-            private void OnEnable() 
-            { 
-                //playerRuntime.Subscribe(gameObject); 
-            }
-
             // Update is called once per frame
             void Update()
             {
                 //Actualiza los float de los ejes
-                playerProfile.MovementAxis = new Vector2(Input.GetAxisRaw("Horizontal") * Time.deltaTime, Input.GetAxisRaw("Vertical"));
-                playerProfile.MouseAxis = new Vector2(Input.GetAxis("Mouse X") * playerProfile.MouseSensitivity,
-                    Input.GetAxis("Mouse Y") * playerProfile.MouseSensitivity);
-
-                //Llamada a la rotación
-                playerProfile.Rotation(transform);
+                playerProfile.HorizontalMove = Input.GetAxisRaw("Horizontal");
+                playerProfile.VerticalMove = Input.GetAxisRaw("Vertical");
             }
 
             private void FixedUpdate()
             {
                 //Llamada al movimiento
-                playerProfile.Movement(rb, transform);
+                playerProfile.Movement(rb);
             }
+            #endregion
 
-            private void OnDisable() 
-            { 
-                //playerRuntime.UnSubscribe(gameObject); 
-            }
+            #region Funtions
+
             #endregion
         }
     }

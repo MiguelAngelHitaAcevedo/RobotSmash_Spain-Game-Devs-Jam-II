@@ -10,8 +10,6 @@ namespace RobotSmash
         {
             #region Variables
             [SerializeField] private T value = default;
-            [TextArea(3, 7)]
-            [SerializeField] private string description = default;
 
             public T Value { get => value; set => this.value = value; }
             #endregion
