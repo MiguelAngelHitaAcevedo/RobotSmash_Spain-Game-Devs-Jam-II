@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerProfile.cs" />
     <Compile Include="Assets\Scripts\Variables\AVariables.cs" />
     <Compile Include="Assets\Scripts\Variables\FloatVariable.cs" />
     <Compile Include="Assets\Scripts\Variables\Vector2Variable.cs" />
