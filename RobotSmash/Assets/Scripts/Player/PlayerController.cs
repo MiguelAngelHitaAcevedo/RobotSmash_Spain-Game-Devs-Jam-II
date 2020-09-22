@@ -13,9 +13,6 @@ namespace RobotSmash
             [SerializeField] private Rigidbody rb = default;
             //Aquí se almacena la lógica del jugador
             [SerializeField] private PlayerProfile playerProfile = default;
-            //Camara del player
-            [SerializeField] private Camera playerCamera = default;
-
             #endregion
 
             #region MonoBehaviour
@@ -30,19 +27,19 @@ namespace RobotSmash
             void Update()
             {
                 //Actualiza los float de los ejes
-                playerProfile.MovementAxis = new Vector2(Input.GetAxisRaw("Horizontal") * Time.deltaTime, Input.GetAxisRaw("Vertical"));
-                playerProfile.MouseAxis = new Vector2(Input.GetAxis("Mouse X") * playerProfile.MouseSensitivity,
-                    Input.GetAxis("Mouse Y") * playerProfile.MouseSensitivity);
-
-                //Llamada a la rotación
-                playerProfile.Rotation(transform);
+                playerProfile.HorizontalMove = Input.GetAxisRaw("Horizontal");
+                playerProfile.VerticalMove = Input.GetAxisRaw("Vertical");
             }
 
             private void FixedUpdate()
             {
                 //Llamada al movimiento
-                playerProfile.Movement(rb, transform);
+                playerProfile.Movement(rb);
             }
+            #endregion
+
+            #region Funtions
+
             #endregion
         }
     }
