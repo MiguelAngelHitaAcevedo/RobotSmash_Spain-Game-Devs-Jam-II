@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b11a98350d36a444abcd1d1d42def763, type: 3}
   m_Name: Default
   m_EditorClassIdentifier: 
-  defaultSpeed: 10
+  defaultSpeed: 150
   dynamicSpeed: {fileID: 11400000, guid: 80b1cb60b233c5c4f95030fab122a92f, type: 2}
-  horizontalMove: {fileID: 11400000, guid: d1ac46af0b6220c41a892ae698b9e06a, type: 2}
-  verticalMove: {fileID: 11400000, guid: 707bcf677d1944640a1f127af3d8a6fb, type: 2}
+  mouseSensitivity: {fileID: 11400000, guid: 772fb43558b87694494bcf2ec5cca761, type: 2}
+  movementAxis: {fileID: 11400000, guid: 72ec4def262f26c4f88947f68514e8e2, type: 2}
+  mouseAxis: {fileID: 11400000, guid: 7240bb0651abd8d44918687960de5724, type: 2}
